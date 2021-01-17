@@ -8,7 +8,6 @@ focus_tree = {
 			add = 10
 			tag = HUN
 			#always = no
-			has_dlc = "Death or Dishonor"
 		}
 	}
 	
@@ -7553,4 +7552,116 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
+	focus = {
+		id = Budapest_In_Ruin
+		icon = GFX_goal_generic_air_bomber
+
+		x = 30
+		y = 11
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+		bypass = {
+		}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = yes
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				add_ideas = HUN_defeat_in_the_great_war
+			
+
+			}
+
+		
+	
+	}
+	focus = {
+		id = HUN_turtles
+		icon = GFX_goal_generic_construction2
+		prerequisite = {focus = Budapest_In_Ruin}
+		x = 29
+		y = 12
+
+		cost = 10
+
+		ai_will do = {
+			factor = 50
+		}
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = HUN_turtles
+			
+
+		}
+
 }
+
+focus = {
+	id = HUN_Economic_Recovery
+	icon = GFX_goal_generic_state_economy
+	prerequisite = {focus = Budapest_In_Ruin}
+	x = 31
+	y = 12
+
+	cost = 10
+
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = HUN_defeat_in_the_great_war
+		    add_idea = HUN_defeat_in_the_great_war2
+
+		}
+		
+			
+
+	}
+
+
+}
+
