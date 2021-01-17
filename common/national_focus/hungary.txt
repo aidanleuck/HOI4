@@ -7556,8 +7556,8 @@ focus_tree = {
 		id = Budapest_In_Ruin
 		icon = GFX_goal_generic_air_bomber
 
-		x = 30
-		y = 11
+		x = 50
+		y = 9
 
 		cost = 0
 
@@ -7592,8 +7592,8 @@ focus_tree = {
 		id = HUN_turtles
 		icon = GFX_goal_generic_construction2
 		prerequisite = {focus = Budapest_In_Ruin}
-		x = 29
-		y = 12
+		x = 48
+		y = 11
 
 		cost = 10
 
@@ -7625,11 +7625,162 @@ focus_tree = {
 }
 
 focus = {
-	id = HUN_Economic_Recovery
-	icon = GFX_goal_generic_state_economy
+	id = HUN_start_recovery
+	icon = GFX_focus_generic_industry_2
 	prerequisite = {focus = Budapest_In_Ruin}
-	x = 31
+	x = 50
+	y = 11
+
+	cost = 10
+
+	ai_will_do {
+		factor = 10
+	}
+
+	available = {
+
+	}
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	complete_tooltip = {
+		random_state = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+
+}
+focus = {
+	id = HUN_assembly_line
+	icon = GFX_goal_generic_production
+	prerequisite = {focus = Budapest_In_Ruin}
+
+	x = 54
+	y = 11
+	cost = 10
+
+	ai_will_do {
+		factor = 10
+	}
+
+	available = {
+
+	}
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	completion_reward = {
+		add_ideas = HUN_arms
+	}
+}
+
+focus = {
+	id = HUN_civilian_capacity
+	icon = GFX_focus_generic_industry_2
+	prerequisite = {focus = HUN_assembly_line}
+	prerequisite = {focus = HUN_start_recovery}
+
+	x = 52
 	y = 12
+	cost = 10
+
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	complete_tooltip = {
+		random_state = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			
+		}
+	}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+		}		
+
+
+}
+
+
+
+focus = {
+	id = HUN_Economic_Revitalization
+	icon = GFX_goal_generic_state_economy
+	prerequisite = {focus = HUN_civilian_capacity}
+	
+	x = 50
+	y = 13
 
 	cost = 10
 
@@ -7652,16 +7803,199 @@ focus = {
 	}
 
 	completion_reward = {
-		swap_ideas = {
+		swap_ideas{
 			remove_idea = HUN_defeat_in_the_great_war
-		    add_idea = HUN_defeat_in_the_great_war2
-
+			add_idea = HUN_defeat_in_the_great_war2
 		}
-		
-			
-
 	}
 
 
 }
+
+focus = {
+	id = HUN_civilian_power
+	icon = GFX_focus_generic_industry_2
+	prerequisite = {focus = HUN_civilian_capacity}
+	
+
+	x = 54
+	y = 13
+	cost = 4
+
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	complete_tooltip = {
+		random_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			
+		}
+	}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+
+
+}
+focus = {
+	id = HUN_military_power
+	icon = GFX_focus_generic_industry_2
+	prerequisite = {focus = HUN_civilian_capacity}
+	cost = 4
+	
+
+	x = 52
+	y = 13
+
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	complete_tooltip = {
+		random_state = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 10
+				instant_build = yes
+			}
+			
+		}
+	}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = arms_factory
+					level = 10
+					instant_build = yes
+				}
+			}
+		}		
+
+
+}
+focus = {
+	id = HUN_recovered
+	icon = GFX_goal_manpower
+	prerequisite = {focus = HUN_Economic_Revitalization}
+	prerequisite = {focus = HUN_civilian_power}
+	prerequisite = {focus = HUN_military_power}
+	cost = 7
+	
+
+	x = 52
+	y = 14
+
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+	completion_reward = {
+		swap_ideas {
+			remove_idea = HUN_defeat_in_the_great_war2
+			add_idea = Economic_Recovery
+
+		}
+		
+		
+	}
+
+}
+focus = {
+	id = HUN_mobilize
+	icon = GFX_goal_plan
+	prerequisite = {focus = HUN_recovered}
+	x = 52
+	y = 15
+
+	cost = 5
+	ai_will do = {
+		factor = 50
+	}
+
+	avaliable = {
+
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
+
+	completion_reward = {
+		add_ideas = Total_Mobilization
+	}
+
+
+}
+
+
+
+
+
+
+
+
 
