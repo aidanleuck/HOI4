@@ -1087,6 +1087,7 @@ ideas = {
 		war_support_factor = -0.9
 	    conscription= -0.2
 		industrial_capacity_factory = -0.35
+		consumer_goods_factor = 0.5
 		}
 		}
 		
@@ -1100,9 +1101,43 @@ ideas = {
 		war_support_factor = -0.45
 	    conscription= -0.1
 		industrial_capacity_factory = -0.17
+		consumer_goods_factor = 0.25
+
 		}
 		}
-	}
+		ITA_a_New_Day = {
+			allowed = {
+				original_tag = ITA
+			}
+			modifier = {  stability_factor = 0.2
+			war_support_factor = 0.3
+			conscription = 0.02
+			industrial_capacity_factory = 0.2
+			consumer_goods_factor = -0.05
+			}
+		}
+		ITA_stimulus = {
+			allowed = {
+				original_tag = ITA
+			}
+			modifier = {  stability_factor = -0.15
+			war_support_factor = -0.225
+			conscription = -0.05
+			industrial_capacity_factory = -0.09
+			consumer_goods_factor = 0.10
+			}
+		}
+		ITA_fortify = {
+			allowed = {
+				original_tag = ITA
+			}
+			modifier = {
+				production_speed_bunker_factor = 0.6
+				 production_speed_coastal_bunker_factor = 0.6
+			}
+		}
+		
+}
 	
 
 		
