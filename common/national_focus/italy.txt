@@ -5284,4 +5284,46 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
+	focus = {
+		id = ITA_fall_of_Rome
+		cost = 0
+		x = 30
+		y = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			r56_script_i_am_sane = yes
+			ITA = {
+				r56_script_target_is_sane = yes
+			}
+		}
+		bypass = {
+			ITA = {
+				r56_script_standard_bypass = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = ITA_fall_Rome
+		}
+}
+	focus = {
+		id = Recovery
+		cost = 30
+		prerequisite = {
+			focus = ITA_fall_of_Rome
+		}
+		x = 30
+		y = 9
+		ai_will_do = {
+			factor = 10
+				
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ITA_fall_Rome
+				add_idea = ITA_Recovery
+		}
+		}
+	}
 }

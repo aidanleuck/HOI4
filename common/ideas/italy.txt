@@ -1077,6 +1077,31 @@ ideas = {
 				production_speed_buildings_factor = 0.03
 			}
 		}
+		ITA_fall_Rome = {
+	name= Fall of Rome
+	allowed = {
+				original_tag = ITA
+			}
+		modifier = {	
+		stability_factor = -0.6
+		war_support_factor = -0.9
+	    conscription= -0.2
+		industrial_capacity_factory = -0.35
+		}
+		}
+		
+		ITA_Recovery = {
+	name= ITA Recovery
+	allowed = {
+				original_tag = ITA
+			}
+		modifier = {	
+		stability_factor = -0.3
+		war_support_factor = -0.45
+	    conscription= -0.1
+		industrial_capacity_factory = -0.17
+		}
+		}
 	}
 	
 
@@ -2109,6 +2134,7 @@ ideas = {
 				}
 			}			
 		}
+		}
 		
 		rodolfo_graziani = {
 			ledger = army
@@ -2225,5 +2251,7 @@ ideas = {
 			
 			traits = { rocket_scientist }
 		}
-	}
+		
+		
+	
 }
